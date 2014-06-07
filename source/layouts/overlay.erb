@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><%= current_page.data.title || "Overlays" %></title>
+
+<%= stylesheet_link_tag "normalize", "all" %>
+<%= javascript_include_tag  "all" %>
+</head>
+<body class="<%= page_classes %>">
+  <div class="overlay">
+    <%= yield %>
+  </div>
+</body>
+</html>
