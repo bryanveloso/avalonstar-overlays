@@ -20,6 +20,10 @@
 # page "/path/to/file.html", :layout => :otherlayout
 #
 # A path which all have the same layout
+with_layout :overlay do
+  page "/overlays/*"
+end
+
 # with_layout :admin do
 #   page "/admin/*"
 # end
@@ -45,11 +49,12 @@
 #   end
 # end
 
-set :css_dir, 'stylesheets'
+# Set the build directory to "/tmp" for Heroku's sake.
+set :build_dir, 'tmp'
 
-set :js_dir, 'javascripts'
-
-set :images_dir, 'images'
+set :css_dir, 'assets/stylesheets'
+set :js_dir, 'assets/javascripts'
+set :images_dir, 'assets/images'
 
 # Build-specific configuration
 configure :build do
