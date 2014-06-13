@@ -8,7 +8,7 @@
 <%= javascript_include_tag  "all" %>
 </head>
 <body class="<%= page_classes %>">
-  <div class="overlay-container">
+  <div class="overlay-container" style="background-image: url('<%= current_page.data.image %>')">
     <%= yield %>
   </div>
 </body>
