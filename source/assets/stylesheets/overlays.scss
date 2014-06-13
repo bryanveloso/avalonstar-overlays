@@ -1,4 +1,4 @@
-$brand-dark-grey: #333 !default;
+$brand-dark-grey: #444 !default;
 $brand-light-grey: #aaa !default;
 
 $type-gotham: 'Gotham SSm A', 'Gotham SSm B';
@@ -14,18 +14,18 @@ $type-idlewild: 'Idlewild SSm A', 'Idlewild SSm B';
 h1 {
   margin: 0;
 
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 500;
   letter-spacing: -3px;
-  line-height: 36px;
+  line-height: 42px;
 }
 p {
   margin: 0;
 
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: -1px;
-  line-height: 16px;
+  line-height: 18px;
 }
 
 // .overlay-container
@@ -53,7 +53,7 @@ p {
   display: inline-flex;
   flex-direction: column;
   overflow: hidden;
-  width: 1152px; height: 100px;
+  width: 1152px; height: 128px;
 
   background: #fff;
   border-radius: 2px;
@@ -67,7 +67,7 @@ p {
   animation-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 
   .game-title {
-    margin: 21px 24px 6px 0;
+    margin: 30px 32px 6px 0;
     color: rgba($brand-dark-grey, .0);
 
     @extend %animated;
@@ -78,7 +78,7 @@ p {
     animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
   }
   .byline {
-    margin: 0 24px 15px 0;
+    margin: 0 32px 0 0;
     color: rgba($brand-light-grey, .0);
 
     @extend %animated;
@@ -93,7 +93,7 @@ p {
 // .overlay-bumper Animations
 @keyframes overlay-bumper-box-appear {
   0% { transform: translateX(-128px); width: 0px; height: 0px; }
-  50% { width: 5px; height: 100px; }
+  50% { width: 5px; height: 128px; }
   100% { transform: translateX(0px); width: 1152px; }
 }
 
