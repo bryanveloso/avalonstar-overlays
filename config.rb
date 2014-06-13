@@ -45,6 +45,9 @@ activate :livereload, :host => '127.0.0.1'
 # Autoprefixer configuration
 activate :autoprefixer, browsers: ['last 3 versions', 'ie 8', 'ie 9']
 
+# Use pretty URLs
+activate :directory_indexes
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
