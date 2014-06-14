@@ -59,8 +59,9 @@ activate :directory_indexes
 set :build_dir, 'tmp'
 
 set :css_dir, 'assets/stylesheets'
-set :js_dir, 'assets/javascripts'
+set :fonts_dir, 'assets/fonts'
 set :images_dir, 'assets/images'
+set :js_dir, 'assets/javascripts'
 
 # Build-specific configuration
 configure :build do
