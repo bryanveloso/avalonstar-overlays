@@ -13,6 +13,7 @@ $type-idlewild: 'Idlewild SSm A', 'Idlewild SSm B';
 }
 
 // Reset the look of standard elements.
+body { color: #000; }
 h1 {
   margin: 0;
 
@@ -39,15 +40,40 @@ p {
   padding: 0 64px;
   width: 1280px; height: 720px;
 
-  background: #000;
   color: $color-primary;
   font-family: $type-idlewild;
+}
+
+.bumper-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1280px; height: 720px;
+  z-index: -10;
+
+  background-color: #000;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+.bumper-background-image {
+  opacity: 0;
+  width: 1280px; height: 720px;
+
+  @extend %animated;
+  animation-fill-mode: forwards;
+  animation-name: bumper-background-image-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+@keyframes bumper-background-image-appear {
+  0% { opacity: 0; }
+  100% { opacity: 0.99; }
 }
 
 // Placeholders.
 %animated {
   position: relative;
   transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
 }
 
 // .overlay-bumper
@@ -57,15 +83,12 @@ p {
   overflow: hidden;
   width: 1152px; height: 112px;
 
-  background: rgba(#fff, .95);
   // border-radius: 2px;
   text-align: right;
 
   @extend %animated;
-  animation-delay: 500ms;
-  animation-duration: 1500ms;
   animation-fill-mode: forwards;
-  animation-name: overlay-bumper-box-appear;
+  animation-name: overlay-bumper-appear;
   animation-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 
   .game-title {
@@ -73,8 +96,6 @@ p {
     color: rgba($color-primary, .0);
 
     @extend %animated;
-    animation-delay: 2000ms;
-    animation-duration: 1000ms;
     animation-fill-mode: forwards;
     animation-name: overlay-bumper-game-name-appear;
     animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
@@ -84,8 +105,6 @@ p {
     color: rgba($color-secondary, .0);
 
     @extend %animated;
-    animation-delay: 2100ms;
-    animation-duration: 1000ms;
     animation-fill-mode: forwards;
     animation-name: overlay-bumper-byline-appear;
     animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
@@ -93,10 +112,22 @@ p {
 }
 
 // .overlay-bumper Animations
-@keyframes overlay-bumper-box-appear {
-  0% { transform: translateX(-128px); width: 0px; height: 0px; }
-  50% { transform: translateX(-128px); width: 5px; height: 112px; }
-  100% { transform: translateX(0px); width: 1152px; }
+@keyframes overlay-bumper-appear {
+  0% {
+    background: rgba(#fff, .95);
+    transform: translateX(-128px);
+    width: 0px; height: 0px;
+  }
+  50% {
+    background: rgba(#fff, .95);
+    transform: translateX(-128px);
+    width: 5px; height: 112px;
+  }
+  100% {
+    background: rgba(#fff, .95);
+    transform: translateX(0px);
+    width: 1152px;
+  }
 }
 
 @keyframes overlay-bumper-game-name-appear {
@@ -111,24 +142,19 @@ p {
 
 // .social-bumper
 .social-bumper {
-  background: rgba(#000, .6);
-  color: #fff;
-  // margin-top: 5px;
-  // border-radius: 2px;
-
+  background: rgba(#000, .7);
   font-family: $type-gotham;
   height: 48px;
 
   @extend %animated;
-  animation-delay: 500ms;
-  animation-duration: 1500ms;
   animation-fill-mode: both;
-  animation-name: social-bumper-box-appear;
+  animation-name: social-bumper-appear;
   animation-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 
   .social-links {
     display: inline-flex;
     margin: 0;
+    overflow: hidden;
     padding: 0;
     width: 1152px;
 
@@ -137,11 +163,19 @@ p {
   .social-link {
     flex: 1;
     padding-top: 3px;
+    visibility: hidden;
 
+    color: rgba(#fff, 0.7);
     font-size: 14px;
     text-align: center;
     text-shadow: 0 1px 1px rgba(#000, .5);
 
+    @extend %animated;
+    animation-fill-mode: forwards;
+    animation-name: social-link-appear;
+    animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+    strong { color: #fff; }
     &.facebook { padding-top: 6px; }
   }
 }
@@ -159,12 +193,55 @@ p {
   }
   &.ss-twitter { color: #55acee; }
   &.ss-youtube { color: #e52d27; }
+  &.ss-steam { color: #fff; }
 }
 
 
 // .social-bumper Animations
-@keyframes social-bumper-box-appear {
+@keyframes social-bumper-appear {
   0% { transform: translateX(-128px); width: 0px; height: 0px; }
   50% { transform: translateX(-128px); width: 5px; height: 48px; }
   100% { transform: translateX(0px); width: 1152px; }
+}
+
+@keyframes social-link-appear {
+  0% { transform: rotateX(90deg) translateY(100%); opacity: 0; visibility: visible; }
+  100% { transform: rotateX(0deg) translateY(0%); opacity: 0.99; visibility: visible; }
+}
+
+
+// Animation Delays and Durations
+// (In order of appearance.)
+.bumper-background {
+  animation-delay: 500ms;               // start:    500ms
+  transition-duration: 1000ms;          // end:     1500ms
+}
+.bumper-background-image {
+  animation-delay: 1000ms;              // start:   1000ms
+  animation-duration: 1000ms;           // end:     2000ms
+}
+.overlay-bumper {
+  animation-delay: 2000ms;              // start:   2000ms
+  animation-duration: 1500ms;           // end:     3500ms
+
+  .game-title {
+    animation-delay: 4000ms;            // start:   4000ms
+    animation-duration: 1500ms;         // end:     5500ms
+  }
+  .byline {
+    animation-delay: 4200ms;            // start:   4200ms
+    animation-duration: 1500ms;         // end:     5700ms
+  }
+}
+.social-bumper {
+  animation-delay: 2000ms;              // start:   2000ms
+  animation-duration: 1500ms;           // end:     3500ms
+
+  .social-link {
+    animation-duration: 1000ms;
+
+    &.twitter { animation-delay: 4400ms; }
+    &.facebook { animation-delay: 4800ms; }
+    &.youtube { animation-delay: 5200ms; }
+  }
 }
