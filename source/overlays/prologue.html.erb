@@ -1,0 +1,26 @@
+<div class="overlay-prologue">
+  <div class="prologue-loading">
+    <div class="prologue-image-overlay">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+    <div class="prologue-image"
+         cross-origin="anonymous"
+         data-adaptive-background="1"
+         data-ab-css-background="1"
+         style="background-image: url('<%= data.game.current.image.large %>')">
+    </div>
+  </div>
+  <div class="prologue-message">
+    <span class="todays-game"><%= data.game.current.name %></span>
+    <time class="todays-date"><%= Time.now.month %>/<%= Time.now.day %></time>
+  </div>
+</div>
+<footer class="social-footer">
+  <%= partial "partials/social" %>
+</footer>
