@@ -16,5 +16,6 @@ gem 'wdm', '~> 0.1.0', :platforms => [:mswin, :mingw]
 
 # Deployment-related plugins
 gem 'dotenv'
+gem 'newrelic_rpm'
 gem 'rack-contrib'
 gem 'unicorn'

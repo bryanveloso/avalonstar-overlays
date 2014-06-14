@@ -71,6 +71,7 @@ GEM
       sprockets-helpers (~> 1.1.0)
       sprockets-sass (~> 1.1.0)
     multi_json (1.10.1)
+    newrelic_rpm (3.8.0.218)
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
@@ -113,6 +114,7 @@ DEPENDENCIES
   middleman (~> 3.2.2)
   middleman-autoprefixer (~> 0.2.3)
   middleman-livereload (~> 3.1.0)
+  newrelic_rpm
   rack-contrib
   unicorn
   wdm (~> 0.1.0)
