@@ -13,3 +13,9 @@ gem 'middleman-autoprefixer', '~> 0.2.3'
 
 # For faster file watcher updates on Windows:
 gem 'wdm', '~> 0.1.0', :platforms => [:mswin, :mingw]
+
+# Deployment-related plugins
+gem 'dotenv'
+gem 'newrelic_rpm'
+gem 'rack-contrib'
+gem 'unicorn'
