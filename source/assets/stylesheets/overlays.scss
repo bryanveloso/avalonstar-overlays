@@ -1,3 +1,5 @@
+@import "fonts";
+
 $brand-dark-grey: #444 !default;
 $brand-light-grey: #aaa !default;
 
@@ -37,7 +39,7 @@ p {
   padding: 0 64px;
   width: 1280px; height: 720px;
 
-  background: $brand-dark-grey;
+  background: #000;
   color: $brand-dark-grey;
   font-family: $type-idlewild;
 }
@@ -53,27 +55,27 @@ p {
   display: inline-flex;
   flex-direction: column;
   overflow: hidden;
-  width: 1152px; height: 128px;
+  width: 1152px; height: 112px;
 
   background: #fff;
-  border-radius: 2px;
+  // border-radius: 2px;
   text-align: right;
 
   @extend %animated;
   animation-delay: 500ms;
-  animation-duration: 1000ms;
-  animation-fill-mode: both;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
   animation-name: overlay-bumper-box-appear;
   animation-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 
   .game-title {
-    margin: 30px 32px 6px 0;
+    margin: 22px 32px 6px 0;
     color: rgba($brand-dark-grey, .0);
 
     @extend %animated;
-    animation-delay: 1500ms;
+    animation-delay: 2000ms;
     animation-duration: 1000ms;
-    animation-fill-mode: both;
+    animation-fill-mode: forwards;
     animation-name: overlay-bumper-game-name-appear;
     animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
   }
@@ -82,9 +84,9 @@ p {
     color: rgba($brand-light-grey, .0);
 
     @extend %animated;
-    animation-delay: 1600ms;
+    animation-delay: 2100ms;
     animation-duration: 1000ms;
-    animation-fill-mode: both;
+    animation-fill-mode: forwards;
     animation-name: overlay-bumper-byline-appear;
     animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
   }
@@ -93,7 +95,7 @@ p {
 // .overlay-bumper Animations
 @keyframes overlay-bumper-box-appear {
   0% { transform: translateX(-128px); width: 0px; height: 0px; }
-  50% { width: 5px; height: 128px; }
+  50% { transform: translateX(-128px); width: 5px; height: 112px; }
   100% { transform: translateX(0px); width: 1152px; }
 }
 
@@ -105,4 +107,58 @@ p {
 @keyframes overlay-bumper-byline-appear {
   0% { transform: translateX(128px); }
   100% { transform: translateX(0px); color: rgba($brand-light-grey, 1.0); }
+}
+
+// .social-bumper
+.social-bumper {
+  background: rgba(#000, .6);
+  color: #fff;
+  // margin-top: 5px;
+  // border-radius: 2px;
+
+  font-family: $type-gotham;
+  height: 48px;
+
+  @extend %animated;
+  animation-delay: 500ms;
+  animation-duration: 1500ms;
+  animation-fill-mode: both;
+  animation-name: social-bumper-box-appear;
+  animation-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+
+  .social-links {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    width: 1152px;
+
+    list-style: none;
+  }
+  .social-link {
+    flex: 1;
+    padding-top: 3px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(#000, .5);
+  }
+}
+
+.ss-icon {
+  font-size: 24px;
+  position: relative;
+  top: 6px;
+
+  &.ss-twitter { color: #55acee; }
+  &.ss-facebook { color: #3b5998; }
+  &.ss-youtube { color: #e52d27; }
+}
+
+
+// .social-bumper Animations
+@keyframes social-bumper-box-appear {
+  0% { transform: translateX(-128px); width: 0px; height: 0px; }
+  50% { transform: translateX(-128px); width: 5px; height: 48px; }
+  100% { transform: translateX(0px); width: 1152px; }
 }
