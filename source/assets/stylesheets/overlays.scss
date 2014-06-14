@@ -1,7 +1,7 @@
 @import "fonts";
 
-$brand-dark-grey: #444 !default;
-$brand-light-grey: #aaa !default;
+$color-primary: rgba(#333, .9) !default;
+$color-secondary: rgba(#333, .4) !default;
 
 $type-gotham: 'Gotham SSm A', 'Gotham SSm B';
 $type-idlewild: 'Idlewild SSm A', 'Idlewild SSm B';
@@ -40,11 +40,11 @@ p {
   width: 1280px; height: 720px;
 
   background: #000;
-  color: $brand-dark-grey;
+  color: $color-primary;
   font-family: $type-idlewild;
 }
 
-//
+// Placeholders.
 %animated {
   position: relative;
   transform: translate3d(0, 0, 0);
@@ -57,7 +57,7 @@ p {
   overflow: hidden;
   width: 1152px; height: 112px;
 
-  background: #fff;
+  background: rgba(#fff, .95);
   // border-radius: 2px;
   text-align: right;
 
@@ -70,7 +70,7 @@ p {
 
   .game-title {
     margin: 22px 32px 6px 0;
-    color: rgba($brand-dark-grey, .0);
+    color: rgba($color-primary, .0);
 
     @extend %animated;
     animation-delay: 2000ms;
@@ -81,7 +81,7 @@ p {
   }
   .byline {
     margin: 0 32px 0 0;
-    color: rgba($brand-light-grey, .0);
+    color: rgba($color-secondary, .0);
 
     @extend %animated;
     animation-delay: 2100ms;
@@ -101,12 +101,12 @@ p {
 
 @keyframes overlay-bumper-game-name-appear {
   0% { transform: translateX(128px); }
-  100% { transform: translateX(0px); color: rgba($brand-dark-grey, 1.0); }
+  100% { transform: translateX(0px); color: $color-primary; }
 }
 
 @keyframes overlay-bumper-byline-appear {
   0% { transform: translateX(128px); }
-  100% { transform: translateX(0px); color: rgba($brand-light-grey, 1.0); }
+  100% { transform: translateX(0px); color: $color-secondary; }
 }
 
 // .social-bumper
@@ -139,19 +139,25 @@ p {
     padding-top: 3px;
 
     font-size: 14px;
-    font-weight: bold;
     text-align: center;
     text-shadow: 0 1px 1px rgba(#000, .5);
+
+    &.facebook { padding-top: 6px; }
   }
 }
 
 .ss-icon {
-  font-size: 24px;
   position: relative;
   top: 6px;
+  margin-right: 4px;
+  font-size: 24px;
 
+  &.ss-facebook {
+    top: 5px;
+    color: #3b5998;
+    font-size: 22px;
+  }
   &.ss-twitter { color: #55acee; }
-  &.ss-facebook { color: #3b5998; }
   &.ss-youtube { color: #e52d27; }
 }
 
