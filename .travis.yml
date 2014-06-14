@@ -1,0 +1,7 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: f8l3klNvTuicqzz1s7al2/Bjp+iW42wrXvvc9Mtq6p0ghbDDzsXrJC7kOr87IwHQx4neGelXdtcnwopTpPYf4lWvte8CRLgeume7Q4X+4xit4il4RBje+U8rpVKV1vSr/hupm6edLZsAwg/GR1VE44vR5VOSFvNd3usS38VqOf4=
+  app: avalonstar-overlays
+  on:
+    repo: bryanveloso/avalonstar-overlays
