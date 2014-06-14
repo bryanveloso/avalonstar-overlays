@@ -15,6 +15,7 @@ gem 'middleman-autoprefixer', '~> 0.2.3'
 gem 'wdm', '~> 0.1.0', :platforms => [:mswin, :mingw]
 
 # Deployment-related plugins
+gem 'builder'
 gem 'dotenv'
 gem 'newrelic_rpm'
 gem 'rack-contrib'
