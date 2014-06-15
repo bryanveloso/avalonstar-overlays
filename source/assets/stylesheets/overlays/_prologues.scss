@@ -78,19 +78,6 @@
   }
 }
 
-.social-header {
-  position: absolute; right: 0; top: 0; left: 0;
-  background: rgba(#000, .5);
-  height: 64px;
-  text-align: center;
-
-  .social-heading {
-    margin-top: 30px;
-    font-weight: bold;
-    letter-spacing: -1px;
-  }
-}
-
 // .social-footer
 .social-footer {
   position: absolute; right: 0; bottom: 0; left: 0;
@@ -124,7 +111,6 @@
 // .spinner
 .spinner {
   margin: 100px auto;
-  width: 50px;
   height: 30px;
   text-align: center;
   font-size: 10px;
