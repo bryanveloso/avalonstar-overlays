@@ -14,12 +14,14 @@
   100% { background-color: #111; }
 }
 
+
 // .overlay-prologue
 .overlay-prologue {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
 
 // .prologue-loading
 .prologue-loading {
@@ -66,6 +68,7 @@
   100% { background-color: rgba(#000, 0.2); }
 }
 
+
 // .prologue-message
 .prologue-message {
   margin-top: 3px;
@@ -105,6 +108,7 @@
   0% { opacity: 0; }
   100% { opacity: 0.99; }
 }
+
 
 // .social-footer
 .social-footer {
@@ -175,23 +179,21 @@
   20% { transform: scaleY(1.0); }
 }
 
+
 // Animation Delays and Durations
 // (In order of appearance.)
 .overlays_prologue .overlay-container {
   animation-delay: 500ms;               // start:    500ms
   animation-duration: 1000ms;           // end:     1500ms
 }
-
 .prologue-loading {
   animation-delay: 1500ms;              // start:   1500ms
   animation-duration: 1500ms;           // end:     3000ms
 }
-
 .prologue-message {
   animation-delay: 2000ms;              // start:   2000ms
   animation-duration: 1500ms;           // end:     3500ms
 }
-
 .social-footer {
   animation-delay: 2500ms;              // start:   2500ms
   animation-duration: 1500ms;           // end:     4000ms
