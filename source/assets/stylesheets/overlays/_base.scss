@@ -1,5 +1,3 @@
-@import "fonts";
-
 $color-primary: rgba(#333, .9) !default;
 $color-secondary: rgba(#333, .4) !default;
 
@@ -63,8 +61,3 @@ p {
   transform-style: preserve-3d;
   transform: translate3d(0, 0, 0);
 }
-
-// View-specific stylesheet includes.
-@import "overlays/bumpers";
-@import "overlays/cinematics";
-@import "overlays/prologues";
