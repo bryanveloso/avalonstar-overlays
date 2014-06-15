@@ -1,8 +1,17 @@
 // .overlay-container Overrides.
 .overlays_prologue .overlay-container {
-  background-color: #111;
-  color: #fff;
   padding-bottom: 64px;
+  color: #fff;
+
+  @extend %animated;
+  animation-name: overlays-prologue-background-color-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+// .overlay-container Animations
+@keyframes overlays-prologue-background-color-appear {
+  0% { background-color: #000; }
+  100% { background-color: #111; }
 }
 
 // .overlay-prologue
@@ -16,6 +25,10 @@
 .prologue-loading {
   position: relative;
   width: 576px; height: 324px;
+
+  @extend %animated;
+  animation-name: prologue-loading-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
   .prologue-image-overlay {
     align-items: center;
@@ -43,6 +56,11 @@
 }
 
 // .prologue-loading Animations
+@keyframes prologue-loading-appear {
+  0% { opacity: 0; }
+  100% { opacity: 0.99; }
+}
+
 @keyframes prologue-image-overlay-pulse {
   0% { background-color: rgba(#000, 0.4); }
   100% { background-color: rgba(#000, 0.2); }
@@ -57,6 +75,10 @@
   background-color: #fff;
   border-top: 2px solid #111;
   transition: border-top-color 500ms ease-in-out;
+
+  @extend %animated;
+  animation-name: prologue-loading-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
   .todays-game {
     display: block;
@@ -78,12 +100,22 @@
   }
 }
 
+// .prologue-message Animations
+@keyframes prologue-message-appear {
+  0% { opacity: 0; }
+  100% { opacity: 0.99; }
+}
+
 // .social-footer
 .social-footer {
   position: absolute; right: 0; bottom: 0; left: 0;
   background: rgba(#000, .5);
   font-family: $type-gotham;
   height: 64px;
+
+  @extend %animated;
+  animation-name: social-footer-appear;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
   .social-links {
     display: inline-flex;
@@ -107,6 +139,13 @@
     &.facebook { padding-top: 6px; }
   }
 }
+
+// .social-footer Animations
+@keyframes social-footer-appear {
+  0% { opacity: 0; }
+  100% { opacity: 0.99; }
+}
+
 
 // .spinner
 .spinner {
@@ -134,4 +173,26 @@
 @keyframes stretchdelay {
   0%, 40%, 100% { transform: scaleY(0.4); }
   20% { transform: scaleY(1.0); }
+}
+
+// Animation Delays and Durations
+// (In order of appearance.)
+.overlays_prologue .overlay-container {
+  animation-delay: 500ms;               // start:    500ms
+  animation-duration: 1000ms;           // end:     1500ms
+}
+
+.prologue-loading {
+  animation-delay: 1500ms;              // start:   1500ms
+  animation-duration: 1500ms;           // end:     3000ms
+}
+
+.prologue-message {
+  animation-delay: 2000ms;              // start:   2000ms
+  animation-duration: 1500ms;           // end:     3500ms
+}
+
+.social-footer {
+  animation-delay: 2500ms;              // start:   2500ms
+  animation-duration: 1500ms;           // end:     4000ms
 }
