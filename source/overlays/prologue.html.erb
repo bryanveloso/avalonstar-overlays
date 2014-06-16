@@ -20,7 +20,7 @@ title: Prologue
     </div>
   </div>
   <div class="prologue-message">
-    <span class="todays-game"><%= data.game.current.name %></span>
+    <span class="todays-game"><span class="todays-episode">EP<%= data.broadcasts.first.keys[0] %></span> <%= data.game.current.name %></span>
     <time class="todays-date"><%= Time.now.month %>/<%= Time.now.day %></time>
   </div>
 </div>

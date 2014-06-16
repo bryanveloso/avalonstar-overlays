@@ -7,3 +7,4 @@ $ ->
   # Specific adaptiveBackground execution.
   $(".prologue-image").on "ab-color-found", (ev, payload) ->
     $(".prologue-message").css('border-top-color', payload.color)
+    $(".todays-episode").css('color', payload.color)
