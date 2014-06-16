@@ -1,6 +1,6 @@
-# General adaptiveBackground execution.
-# For coloring the backgrounds of any bumpers, etc.
 $ ->
+  # General adaptiveBackground execution.
+  # For coloring the backgrounds of any bumpers, etc.
   $.adaptiveBackground.run
     parent: ".bumper-background"
 
