@@ -1,9 +1,9 @@
 {
     "current": {
-        "name": "Super Meat Boy",
-        "gbid": "3030-25114",
+        "name": "Kingdom Hearts 1.5",
+        "gbid": "3030-39815",
         "image": {
-            "large": "http://avalonstar.s3.amazonaws.com/overlays/games/super-meat-boy.png"
+            "large": "http://avalonstar.s3.amazonaws.com/overlays/games/kingdom-hearts-15.jpg"
         }
     }
 }
