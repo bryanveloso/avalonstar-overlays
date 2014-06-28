@@ -21,7 +21,7 @@ title: Prologue
   </div>
   <div class="prologue-message">
     <span class="todays-game"><span class="todays-episode">EP<%= data.broadcasts.first.keys[0] %></span> <%= data.game.current.name %></span>
-    <time class="todays-date"><%= Time.now.month %>/<%= Time.now.day %></time>
+    <time class="todays-date"><%= data.broadcasts.first.values[0].date.month %>/<%= data.broadcasts.first.values[0].date.day %></time>
   </div>
 </div>
 <footer class="social-footer">
