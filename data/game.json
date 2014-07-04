@@ -1,9 +1,9 @@
 {
     "current": {
-        "name": "StepMania",
-        "gbid": "3030-39815",
+        "name": "Crypt of the Necrodancer",
+        "gbid": "3030-43536",
         "image": {
-            "large": "http://avalonstar.s3.amazonaws.com/overlays/games/stepmania.jpg"
+            "large": "http://avalonstar.s3.amazonaws.com/overlays/games/crypt-of-the-necrodancer.jpg"
         }
     }
 }
