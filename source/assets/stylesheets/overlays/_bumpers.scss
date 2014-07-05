@@ -43,6 +43,7 @@
   .game-title {
     margin: 22px 32px 6px 0;
     color: rgba($color-primary, .0);
+    font-size: 40px;
 
     @extend %animated;
     animation-name: overlay-bumper-game-name-appear;
