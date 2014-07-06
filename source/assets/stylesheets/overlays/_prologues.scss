@@ -84,7 +84,7 @@
   animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
   .todays-game {
-    display: block;
+    display: flex;
     flex: 1;
     padding: 8px 10px;
 
@@ -102,6 +102,7 @@
     letter-spacing: -1px;
   }
   .todays-episode {
+    padding-right: 10px;
     position: relative; top: -4px;
     font-size: 11px;
     font-weight: 700;
